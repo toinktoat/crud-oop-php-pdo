@@ -1,5 +1,5 @@
 <?php
-require_once("class.crud.php");
+require_once 'class.crud.php';
 $crud = new CRUD();
 ?>
 <?php include_once 'header.php'; ?>
@@ -23,15 +23,15 @@ $crud = new CRUD();
      <th colspan="2" align="center">Actions</th>
      </tr>
      <?php
-		$query = "SELECT * FROM tbl_users";       
-		$records_per_page=3;
-		$newquery = $crud->paging($query,$records_per_page);
-		$crud->dataview($newquery);
-	 ?>
+        $query = 'SELECT * FROM tbl_users';
+        $records_per_page = 3;
+        $newquery = $crud->paging($query, $records_per_page);
+        $crud->dataview($newquery);
+     ?>
     <tr>
         <td colspan="7" align="center">
  			<div class="pagination-wrap">
-            <?php $crud->paginglink($query,$records_per_page); ?>
+            <?php $crud->paginglink($query, $records_per_page); ?>
         	</div>
         </td>
     </tr>

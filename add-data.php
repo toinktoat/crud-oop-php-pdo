@@ -1,40 +1,33 @@
 <?php
-require_once("class.crud.php");
+require_once 'class.crud.php';
 $crud = new CRUD();
-if(isset($_POST['btn-save']))
-{
-	$fname = $_POST['first_name'];
-	$lname = $_POST['last_name'];
-	$email = $_POST['email_id'];
-	$contact = $_POST['contact_no'];
-	
-	if($crud->create($fname,$lname,$email,$contact))
-	{
-		header("Location: add-data.php?inserted");
-	}
-	else
-	{
-		header("Location: add-data.php?failure");
-	}
+if (isset($_POST['btn-save'])) {
+    $fname = $_POST['first_name'];
+    $lname = $_POST['last_name'];
+    $email = $_POST['email_id'];
+    $contact = $_POST['contact_no'];
+
+    if ($crud->create($fname, $lname, $email, $contact)) {
+        header('Location: add-data.php?inserted');
+    } else {
+        header('Location: add-data.php?failure');
+    }
 }
 ?>
 <?php include_once 'header.php'; ?>
 <div class="clearfix"></div>
 
 <?php
-if(isset($_GET['inserted']))
-{
-	?>
+if (isset($_GET['inserted'])) {
+    ?>
     <div class="container">
 	<div class="alert alert-info">
     <strong>OKE!</strong> Data berhasil diinput <a href="index.php">HOME</a>!
 	</div>
 	</div>
     <?php
-}
-else if(isset($_GET['failure']))
-{
-	?>
+} elseif (isset($_GET['failure'])) {
+    ?>
     <div class="container">
 	<div class="alert alert-warning">
     <strong>MAAF!</strong> Terjadi Kesalahan !

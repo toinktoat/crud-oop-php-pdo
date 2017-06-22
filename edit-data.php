@@ -1,32 +1,27 @@
 <?php
-require_once("class.crud.php");
+require_once 'class.crud.php';
 $crud = new CRUD();
-if(isset($_POST['btn-update']))
-{
-	$id = $_GET['edit_id'];
-	$fname = $_POST['first_name'];
-	$lname = $_POST['last_name'];
-	$email = $_POST['email_id'];
-	$contact = $_POST['contact_no'];
-	
-	if($crud->update($id,$fname,$lname,$email,$contact))
-	{
-		$msg = "<div class='alert alert-info'>
+if (isset($_POST['btn-update'])) {
+    $id = $_GET['edit_id'];
+    $fname = $_POST['first_name'];
+    $lname = $_POST['last_name'];
+    $email = $_POST['email_id'];
+    $contact = $_POST['contact_no'];
+
+    if ($crud->update($id, $fname, $lname, $email, $contact)) {
+        $msg = "<div class='alert alert-info'>
 				<strong>Oke</strong> Data sukses diupdate <a href='index.php'>HOME</a>!
 				</div>";
-	}
-	else
-	{
-		$msg = "<div class='alert alert-warning'>
+    } else {
+        $msg = "<div class='alert alert-warning'>
 				<strong>MAAF</strong> Terjadi Kesalahan 
 				</div>";
-	}
+    }
 }
 
-if(isset($_GET['edit_id']))
-{
-	$id = $_GET['edit_id'];
-	extract($crud->getID($id));	
+if (isset($_GET['edit_id'])) {
+    $id = $_GET['edit_id'];
+    extract($crud->getID($id));
 }
 
 ?>
@@ -36,9 +31,8 @@ if(isset($_GET['edit_id']))
 
 <div class="container">
 <?php
-if(isset($msg))
-{
-	echo $msg;
+if (isset($msg)) {
+    echo $msg;
 }
 ?>
 </div>

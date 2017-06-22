@@ -27,14 +27,14 @@ if (isset($_GET['inserted'])) {
 	</div>
     <?php
 } elseif (isset($_GET['failure'])) {
-    ?>
+        ?>
     <div class="container">
 	<div class="alert alert-warning">
     <strong>MAAF!</strong> Terjadi Kesalahan !
 	</div>
 	</div>
     <?php
-}
+    }
 ?>
 
 <div class="clearfix"></div><br />
